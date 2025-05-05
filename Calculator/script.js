@@ -18,15 +18,15 @@ function backspace() {
 function calculate() {
     try {
         // Replace operations with valid JavaScript equivalents
-        currentExpression = currentExpression.replace(/\^/g, '**');  // Replace ^ with **
-        currentExpression = currentExpression.replace(/sqrt\(/g, 'Math.sqrt('); // Replace sqrt with Math.sqrt
+        currentExpression = currentExpression.replace(/\^/g, '**');  
+        currentExpression = currentExpression.replace(/sqrt\(/g, 'Math.sqrt(');
 
         // Fix trigonometric functions with degrees to radians conversion
         currentExpression = currentExpression.replace(/sin\(([^)]+)\)/g, 'Math.sin(degreesToRadians($1))');
         currentExpression = currentExpression.replace(/cos\(([^)]+)\)/g, 'Math.cos(degreesToRadians($1))');
         currentExpression = currentExpression.replace(/tan\(([^)]+)\)/g, 'Math.tan(degreesToRadians($1))');
         
-        // Now replace the closing parentheses after the functions (already done)
+ )
         currentExpression = currentExpression.replace(/\)/g, ')');
 
         // Now use eval to calculate the result
